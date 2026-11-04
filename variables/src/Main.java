@@ -212,9 +212,38 @@ public class Main {
             }
         }
         if(i>5){
-            System.out.printf("aradığınız sayı listede yok");
+            System.out.println("aradığınız sayı listede yok");
         }
 
+        //fibonacchi oluştur
+
+        //kelime palindrom mu
+        String kelime1 = "matam";
+        int uzunluk = kelime1.length();
+
+        int j= uzunluk - 1;
+
+        for(i=0; i< uzunluk && j>0; i++){
+            if(kelime1.charAt(i) != kelime1.charAt(j)){
+                System.out.println("palindrom değil");
+                return;
+            }
+            j--;
+        }
+        System.out.printf("kelime palidromdur");
+
+
+        //bir metinde girilen karakter kaç kere var
+        char karakter = 'm';
+        int kac = 0;
+
+        for(i=0; i<uzunluk; i++){
+            if(kelime1.charAt(i)==karakter){
+                kac++;
+            }
+        }
+        System.out.println("");//yeni satıra geçirmek için yaptım
+        System.out.println(kac);
 
 
     }
