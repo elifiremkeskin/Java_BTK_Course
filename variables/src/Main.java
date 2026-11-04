@@ -143,6 +143,24 @@ public class Main {
         System.out.println(isPrime);
 
         // kalın ya da ince sesli harf belirtme
+        char harf='İ';
+
+        switch (harf) {
+            case 'A':
+            case 'I':
+            case 'O':
+            case 'U':
+                System.out.println("bu kalın sesi bir harftir");
+                break;
+            case 'E':
+            case 'İ':
+            case 'Ö':
+            case 'Ü':
+                System.out.println("bu ince sesi bir harftir");
+                break;
+            default: System.out.println("bu sesli harf değildir");
+        }
+
         //mükemmel sayı bulma
         int m = 6;
         boolean isGreater = false;
@@ -157,6 +175,47 @@ public class Main {
             isGreater = true;
         }
         System.out.println(isGreater);
+
+        //arkadaş sayılar, kendileri hariç pozitif tam bölenleri toplamı birbirine eşit olan msayılar
+        //toplam1 sayı2ye toplam2 sayı1e eşit olmalı
+        int sayi1 = 220;
+        int sayi2 = 284;
+        int toplam1 = 0;
+        int toplam2 = 0;
+
+        for(i=1; i<sayi1; i++){
+            if(sayi1%i==0){
+                toplam1 = toplam1 + i;
+            }
+        }
+        for(i=1; i< sayi2; i++){
+            if(sayi2%i==0){
+                toplam2 = toplam2 + i;
+            }
+        }
+        if(toplam1==sayi2 && toplam2==sayi1){
+            System.out.println("bu sayılar arkadaş sayıdır");
+        }
+        else{
+            System.out.println("bu sayılar arkadaş sayı değildir");
+        }
+
+        //sayı bulma
+
+        int[] sayılar = new int[]{1,2,4,6,3,7};
+        int aranacak = 5;
+
+        for(i=0; i<=5; i++){
+            if(sayılar[i]==aranacak){
+                System.out.printf("Aradığınız sayı bulundu");
+                return;
+            }
+        }
+        if(i>5){
+            System.out.printf("aradığınız sayı listede yok");
+        }
+
+
 
     }
 }
