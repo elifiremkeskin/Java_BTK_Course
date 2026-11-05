@@ -13,7 +13,7 @@ public class Main {
         CustomerManager customerManager = new CustomerManager();//bellekte nesne üretir
         CustomerManager customerManager2 = new CustomerManager();//bellekte yeni bir referans numarasına konulur
         customerManager = customerManager2; //referans 1in numarası ikiyle aynı oldu 1in tutulduğu heap silinir
-        customerManager.add();
+        customerManager.sum(2,5);
 
         int sayi1 = 10;
         int sayi2 = 20;
@@ -34,6 +34,14 @@ public class Main {
         ProductManager productManager = new ProductManager();
         product.setName("Laptop");
         productManager.add(product);
+
+        //BaseKrediManager baseKrediManager = new BaseKrediManager();
+        KrediUI krediUI = new KrediUI();
+        krediUI.KrediHesapla(new OgretmenKrediManager());
+        //krediui classta base kredi manager kullanıldığı için onun çocukları da kullanılabilir
+        //yeni bir kredi manager classı eklenirse base kredi manager extend edilir
+        //böylece krediUI classına bir şey eklemeden mainden kullanılabilir olur
+        //başka bir class kullanacağın için onu da new diye belirtip nesne oluşturmalısın
     }
 
     //void istenen şeyi yapan metotlardır, sonuç döndürmez
