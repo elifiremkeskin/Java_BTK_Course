@@ -23,5 +23,8 @@ public class Main {
             System.out.println(krediManager.hesapla(1000));
         }
 
+        WomanGameCalculator womanGameCalculator = new WomanGameCalculator();
+        womanGameCalculator.hesapla();
+        womanGameCalculator.gameOver();
     }
 }
