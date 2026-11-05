@@ -32,7 +32,7 @@ public class Main {
 
         Product product = new Product();
         ProductManager productManager = new ProductManager();
-        product.name = "Laptop";
+        product.setName("Laptop");
         productManager.add(product);
     }
 

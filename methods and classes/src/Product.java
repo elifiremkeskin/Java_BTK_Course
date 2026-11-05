@@ -4,7 +4,7 @@ public class Product {
     public Product(){
         System.out.println("pruduct nesnesi oluşturuldu");
     }
-    
+
     private int id;
     //getter ve setter daha kolay yamak için id üstüne sağ tık
     //refactor
