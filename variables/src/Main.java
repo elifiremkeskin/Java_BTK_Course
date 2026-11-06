@@ -230,7 +230,7 @@ public class Main {
             }
             j--;
         }
-        System.out.printf("kelime palidromdur");
+        System.out.println("kelime palidromdur");
 
 
         //bir metinde girilen karakter kaç kere var
@@ -242,9 +242,48 @@ public class Main {
                 kac++;
             }
         }
-        System.out.println("");//yeni satıra geçirmek için yaptım
         System.out.println(kac);
 
+        //faktoriyel
+        int f = 12; //int kullanırsak 12den sonra int overflow hatası alınıyor
+        int fac = 1; //long kullansaydık 24ten sonra bu hatayı alırdık
+        for(i=1; i<=f ; i++){ // recursion kullansaydık stack overflow hatası verir sistem çökerdi
+            fac = fac * i;
+        }
+        System.out.println(fac);
+        //büyük bi sayı hesaplanacağı zaman BirInteger class ve kütüphanesi kullanılır
 
+        //fibonacci
+        int p = 0;
+        int q = 1;
+
+        for (i=1 ; i<15; i++){
+            int t = p + q;
+            System.out.println(p);
+            p =q;
+            q =t;
+        }
+
+        //fibonacci fibo. sayıyı bulma recursive
+        int fibo = 4;
+        System.out.println(fibonacci(fibo));
+
+        //girilen sayıyı basamaklarına ayırma
+        int sayim=12345;
+        int basamak = 5;
+        int kalan = 0;
+
+        for(i=1; i<=basamak; i++){
+            int bas = sayim%((int)Math.pow(10,i)) - kalan;
+            kalan = bas + kalan;
+            System.out.println(bas);
+        }
+
+    }
+    public static int fibonacci(int n){
+        if(n <= 1){
+            return n;
+        }
+        return fibonacci(n-1) + fibonacci(n-2);
     }
 }
