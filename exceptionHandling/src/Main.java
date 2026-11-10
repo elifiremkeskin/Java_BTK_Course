@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) /*throws FileNotFoundException*/ { //exception fırlatma eklenebilir
@@ -40,6 +41,10 @@ public class Main {
         //başkası kullanacaksa da exception fırlatması gerekir
 
         createFile();
+        getFileInfo();
+        readFile();
+        writeFile();
+        readFile();
 
     }
 
@@ -56,5 +61,45 @@ public class Main {
         catch (Exception exception){
             System.out.println(exception);
         }
+    }
+
+    private static void getFileInfo(){
+        File file = new File("C:\\Users\\elif\\Documents\\GitHub\\Java_BTK_Course\\exceptionHandling\\src\\students.txt");
+        if(file.exists()){
+            System.out.println(file.getName());
+            System.out.println(file.getAbsolutePath());
+            System.out.println(file.canRead());
+            System.out.println(file.canWrite());
+            System.out.println(file.length());
+        }
+    }
+
+    private static void readFile(){
+        File file = new File("C:\\Users\\elif\\Documents\\GitHub\\Java_BTK_Course\\exceptionHandling\\src\\students.txt");
+        try {
+            Scanner reader = new Scanner(file);
+            while (reader.hasNextLine()){
+                System.out.println(reader.nextLine());
+            } reader.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void writeFile(){
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(
+                    "C:\\Users\\elif\\Documents\\GitHub\\Java_BTK_Course\\exceptionHandling\\src\\students.txt", true));
+            // dosya yolunun sonunu true yaparsan (append) dosya yazma işlemi üstüne yazmak yerine devamına ekler
+            writer.newLine();
+            writer.write("fatma");
+            writer.newLine();
+            writer.write("aliye");
+            writer.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
