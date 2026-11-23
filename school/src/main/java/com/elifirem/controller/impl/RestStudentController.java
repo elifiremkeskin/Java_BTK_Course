@@ -21,10 +21,11 @@ public class RestStudentController implements IStudentController {
     @Autowired
     private IStudentService studentService;
 
-    //normalde DTO kullanılır sonra yapıcaz, bu yanlış yöntem!!!!
-    @PostMapping(path = "/save")
+    @PostMapping("/save")
     @Override
+    //normalde DTO kullanılır sonra yapıcaz, bu yanlış yöntem!!!!
     public Student saveStudent(@RequestBody Student student) {
+        //servis döndürücek
         return studentService.saveStudent(student);
     }
 
