@@ -14,8 +14,8 @@ import java.io.Serializable;
 @Embeddable//bu sınıfın başka bi entity içinde kullanılacağını belirtir
 public class GradeId implements Serializable { //composite key sınıfı için implement gerekli
     @Column(name = "studentid")
-    private int studentId;
+    private Integer studentId;
 
     @Column(name = "classid")
-    private int classId;
+    private Integer classId;
 }

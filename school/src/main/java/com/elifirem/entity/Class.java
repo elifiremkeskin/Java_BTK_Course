@@ -14,8 +14,9 @@ import lombok.Setter;
 @Table(name = "classes")
 public class Class {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "classid")
-    private int classId;
+    private Integer classId;
 
     @Column(name = "classname")
     private String className;
