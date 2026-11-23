@@ -12,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode // iki idnin eşitliğini karşılaştırır
 @Embeddable//bu sınıfın başka bi entity içinde kullanılacağını belirtir
-public class GradeId implements Serializable { //composite sınıfı için implement gerekli
+public class GradeId implements Serializable { //composite key sınıfı için implement gerekli
     @Column(name = "studentid")
     private int studentId;
 

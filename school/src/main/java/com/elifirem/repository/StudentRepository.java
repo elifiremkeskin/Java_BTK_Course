@@ -1,15 +1,10 @@
 package com.elifirem.repository;
 
 import com.elifirem.entity.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
+//repositoryler interface olmalıdır ve jpa ya da crude extend ederler
 @Repository
-public class StudentRepository {
-
-    public List<Student> getAllStudents(){
-
-        return null;
-    }
+public interface StudentRepository extends JpaRepository<Student, Integer> {
 }

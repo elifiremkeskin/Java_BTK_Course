@@ -14,7 +14,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "grades")
 public class Grade {
-    @Embeddable
+    @EmbeddedId
     private GradeId id;
 
     @MapsId("studentId")
