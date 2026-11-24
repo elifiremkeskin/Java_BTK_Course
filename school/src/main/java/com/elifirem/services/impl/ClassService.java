@@ -8,6 +8,8 @@ import com.elifirem.services.IClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClassService implements IClassService {
 
@@ -30,5 +32,10 @@ public class ClassService implements IClassService {
             clazz.setTeacher(existingTeacher);
         }
         return classRepository.save(clazz);
+    }
+
+    @Override
+    public List<Class> getAllClasses() {
+        return classRepository.findAll();
     }
 }

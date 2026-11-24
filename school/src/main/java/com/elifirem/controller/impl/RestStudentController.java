@@ -29,6 +29,30 @@ public class RestStudentController implements IStudentController {
         return studentService.saveStudent(student);
     }
 
+    @GetMapping("/list")
+    @Override
+    public List<Student> getAllStudents() {
+        return studentService.getAllStudents();
+    }
+
+    @GetMapping("/list/{id}")
+    @Override
+    public Student getStudentById(@PathVariable Integer id) {
+        return studentService.getStudentById(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    @Override
+    public Student deleteStudentById(@PathVariable Integer id) {
+        return studentService.deleteStudentById(id);
+    }
+
+    @PutMapping("/update")
+    @Override
+    public Student updateStudent(@RequestBody Student student) {
+        return studentService.updateStudent(student);
+    }
+
     //postmanden istek geldiğinde hangi metota gideceğini göstermek için anotasyon
     /*@GetMapping(path = "/student-list")
     public List<Student> getAllStudents() {

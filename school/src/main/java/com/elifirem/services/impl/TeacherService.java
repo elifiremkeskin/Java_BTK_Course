@@ -6,6 +6,8 @@ import com.elifirem.services.ITeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TeacherService implements ITeacherService {
     @Autowired
@@ -14,5 +16,10 @@ public class TeacherService implements ITeacherService {
     @Override
     public Teacher saveTeacher(Teacher teacher) {
         return teacherRepository.save(teacher);
+    }
+
+    @Override
+    public List<Teacher> getTeachers() {
+        return teacherRepository.findAll();
     }
 }

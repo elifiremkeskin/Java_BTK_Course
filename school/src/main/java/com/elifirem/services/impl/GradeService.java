@@ -11,6 +11,8 @@ import com.elifirem.services.IGradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GradeService implements IGradeService {
         @Autowired
@@ -51,4 +53,10 @@ public class GradeService implements IGradeService {
             // 5. Kaydet
             return gradeRepository.save(grade);
         }
+
+    @Override
+    public List<Grade> getAllGrade(Grade grade) {
+        return gradeRepository.findAll();
+    }
+
 }

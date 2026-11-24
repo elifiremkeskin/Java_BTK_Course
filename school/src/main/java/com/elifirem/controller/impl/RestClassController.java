@@ -4,10 +4,9 @@ import com.elifirem.controller.IClassController;
 import com.elifirem.entity.Class;
 import com.elifirem.services.IClassService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/rest/api/class")
@@ -20,5 +19,11 @@ public class RestClassController implements IClassController {
     @Override
     public Class saveClass(@RequestBody Class clazz) {
         return classService.saveClass(clazz);
+    }
+
+    @GetMapping("/list")
+    @Override
+    public List<Class> getAllClasses() {
+        return classService.getAllClasses();
     }
 }
